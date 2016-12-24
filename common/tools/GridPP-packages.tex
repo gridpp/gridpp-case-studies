@@ -1,0 +1,117 @@
+% Packages and settings for GridPP document formatting.
+
+% Graphics
+\usepackage[xetex]{graphicx}
+\usepackage{subcaption}
+\usepackage{enumerate}
+
+% Tables
+\usepackage{array}
+\usepackage{dcolumn}
+\newcolumntype{.}{D{.}{.}{2}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+% For the width of the "Services" column.
+\newcommand*{\servw}{1.0cm}
+
+% Layout
+\usepackage{layouts}
+\usepackage{lscape}
+\usepackage{parskip}
+
+% Colours
+\usepackage{xcolor}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{gridppdarkblue}{RGB}{11,45,131}
+\definecolor{gridpplightblue}{RGB}{133,150,193}
+\definecolor{cernblue}{RGB}{0,85,160}
+
+% Mathematics
+\usepackage{latexsym}
+
+% Fonts
+\usepackage{fontspec,xunicode}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\setmainfont{Latin Modern Sans}
+
+% Headers and footers
+%
+% Using the fancyhdr package for the, um, fancy headings...
+\usepackage{fancyhdr}
+\setlength{\headheight}{16pt}
+\setlength{\voffset}{-0.3in}
+\pagestyle{fancy}
+%
+% Redefine the IOP article header settings for the first page.
+\makeatletter
+\def\ps@myheadings{%
+%    \let\@oddfoot\@empty\let\@evenfoot\@empty
+    \let\@oddhead\@empty\let\@evenhead\@empty
+    \let\@mkboth\@gobbletwo
+    \let\sectionmark\@gobble
+    \let\subsectionmark\@gobble}
+\makeatother
+\lhead{\sffamily\rightmark}
+\rhead{\sffamily\leftmark}
+\lfoot{\sffamily{\DRN-v\thisversion}}
+\cfoot{}
+\rfoot{\sffamily{\thepage}}
+
+% Exercises/questions
+\usepackage[listings]{tcolorbox}
+\tcbset{before={\par\medskip\pagebreak[0]\noindent},after={\par\medskip}}%
+
+% Coding
+\usepackage{listings}
+% Listing options
+\definecolor{listbacking}{rgb}{0.98,0.98,0.98}
+\definecolor{commentgrey}{rgb}{0.60,0.60,0.60}
+\definecolor{keywordblue}{rgb}{0.00,0.00,0.50}
+\definecolor{stringgreen}{rgb}{0.00,0.50,0.00}
+\definecolor{deepred}{rgb}{0.60,0.00,0.00}
+\lstset{
+  basicstyle=\footnotesize\ttfamily,
+  gobble=4,
+  float=hbtp,
+  emph={__init__},
+  emphstyle=\color{deepred},
+  showspaces=false,
+  showstringspaces=false,
+  backgroundcolor=\color{listbacking},
+  commentstyle=\color{commentgrey},
+  stringstyle=\color{stringgreen},
+  keywordstyle=\color{keywordblue},
+  numbers=left,
+  numbersep=12pt,
+  %framexleftmargin=20pt,
+  %framexrightmargin=20pt,
+  stepnumber=1,
+  showlines=true
+}
+
+% Acronyms
+\usepackage{acronym}
+
+\usepackage{perpage}
+\MakePerPage{footnote}
+
+% Flow charts and diagrams
+\usepackage{tikz}
+\usetikzlibrary{shapes,shapes.misc,arrows,backgrounds,positioning,fit,calc,shadows}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+% Background image.
+\usepackage{eso-pic}
+\newcommand\AtPageLowerRight[1]{\AtPageLowerLeft{%
+   \makebox[\paperwidth][r]{#1}}}
+\usepackage{ifthen}
+
+% Links
+\usepackage[xetex,pdfpagelabels]{hyperref}%
+\hypersetup{%
+pdfauthor={\theauthorfull},%
+colorlinks=true,%
+urlcolor=gridppdarkblue,%
+citecolor=gridppdarkblue,%
+%linkcolor=cernblue%
+linkcolor=black%
+}

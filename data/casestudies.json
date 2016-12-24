@@ -1,0 +1,267 @@
+[
+  {
+    "full_name":"The Large Synoptic Survey Telescope",
+    "label":"lsst",
+    "sector":"Astrophysics",
+    "overview":"The Large Synoptic Survey Telescope (LSST) is an international physics facility being built at the Cerro Pach&oacute;n ridge in north-central Chil&eacute;.  It will use a three-billion-pixel camera to conduct a ten-year survey of the night sky in the visible electromagnetic spectrum.  The resulting catalogue of images &mdash; an estimated 200 petabytes of data &mdash; will enable scientists to answer some of the most fundamental questions we have about our Universe.  One such use of this data is being explored by researchers at the University of Manchester, who are studying the effect of dark matter and dark energy on the observed shape of galaxies.  By examining how galaxies are distorted by an effect known as cosmic shear, insights can be gained into this missing ninety-five percent of everything we believe exists &mdash; the so-called Dark Universe.",
+    "the_problem":"The LSST will produce images of galaxies in a wide variety of frequency bands of the visible electromagnetic spectrum, with each image giving different information about the galaxy's nature and history. In times gone by, the measurements needed to determine properties like cosmic shear might have been done by hand, or at least with human-supervised computer processing. With the hundreds of thousands of galaxies expected to be observed by LSST, such approaches are unfeasible. Specialised image processing software (Zuntz 2013) has therefore been developed for use with galaxy images from telescopes like LSST and its predecessors. This can be used to produce maps like those shown in Figure 2. The challenge then becomes one of processing and managing the data for hundreds of thousands of galaxies and extracting scientific results required by LSST researchers and the wider astrophysics community.",
+    "the_solution":"As each galaxy is essentially independent of other galaxies in the catalogue, the image processing workflow itself is highly parallelisable. This makes it an ideal problem to tackle with the kind of High-Throughput Computing (HTP) resources and infrastructure offered by GridPP. In many ways, the data from CERN's Large Hadron Collider particle collision events is like that produced by a digital camera (indeed, pixel-based detectors are used near the interaction points) &mdash; and GridPP regularly processes billions of such events as part of the Worldwide LHC Computing Grid (WLCG). You can see how the ATLAS experiment does this in the latter part of this video.\n\nA pilot exercise, led by Joe Zuntz at the University of Manchester and supported by Senior System Administrator Alessandra Forti, saw the porting of the image analysis workflow to GridPP's distributed computing infrastructure. Data from the Dark Energy Survey (DES) was used for the pilot. After transferring this data from the US to GridPP Storage Elements, and enabling the LSST Virtual Organisation on a number of GridPP Tier-2 sites, the IM3SHAPE analysis software package (Zuntz, 2013) was tested on local, grid-friendly client machines to ensure smooth running on the grid. Analysis jobs were then submitted and managed using the Ganga software suite, which is able to coordinate the thousands of individual analyses associated with each batch of galaxies. Initial runs were submitted using Ganga to local grid sites, but the pilot progressed to submission to multiple sites via the GridPP DIRAC (Distributed Infrastructure with Remote Agent Control) service. The flexibility of Ganga allows both types of submission, which made the transition from local to distributed running significantly easier. \n\nBy the end of pilot, Zuntz was able to run the image processing workflow on multiple GridPP sites, regularly submitting thousands of analysis jobs on DES images. He has since requested to continue using GridPP to support his scientific work.",
+    "what_they_said":{"quote":"The pilot is considered to be a success. By the end of the exercise, analyses could be carried out significantly faster than was the case previously (for example, when using highly-contended US-based HPC resources). Thanks are due to the members of the GridPP community for their assistance and support throughout.","contact":"Dr George Beckett, Project Manager, Uni. Edinburgh/LSST"},
+    "services":
+[
+{"Virtual Organisations":"Multiple GridPP sites were configured to enable members of the pre-existing LSST VO to access computing and storage resources."},
+{"Ganga":"The Ganga software suite was used for grid job submission and management to both local sites (development) and the GridPP DIRAC service (production)."},
+{"The GridPP DIRAC service":"Once local job submission was running successfully, Ganga was configured to use the GridPP DIRAC service for multi-site workload and data management."},
+{"Storage":"Multiple GridPP sites were configured for storing DES image data so that it could be used in GridPP DIRAC jobs. The GridPP DIRAC File Catalog (DFC) was used to catalogue and manage the datasets once transferred from the US-based network storage."}
+],
+    "supporting_sites":
+[
+{"UKI-LT2-BRUNEL":"http://www.brunel.ac.uk/"},
+{"UKI-LT2-IC-HEP":"http://www3.imperial.ac.uk/"},
+{"UKI-LT2-QMUL":"https://www.gridpp.ac.uk/infrastructure/the-uk-tier-2-sites/qmul"},
+{"UKI-NORTHGRID-LANCS-HEP":"http://www.lancaster.ac.uk/"},
+{"UKI-NORTHGRID-LIV-HEP":"http://www.liv.ac.uk/"},
+{"UKI-NORTHGRID-MAN-HEP":"http://www.manchester.ac.uk/"},
+{"UKI-SCOTGRID-ECDF":"http://www.ed.ac.uk/"},
+{"UKI-SOUTHGRID-OX-HEP":"http://www.ox.ac.uk/"},
+{"UKI-SOUTHGRID-RALPP":"http://www.stfc.ac.uk/about-us/where-we-work/rutherford-appleton-laboratory/"}
+],
+    "vos":
+[
+{"lsst":{"egi_ops":"http://operations-portal.egi.eu/vo/view/voname/lsst","voms_server":"https://voms2.fnal.gov:8443/voms/lsst"}}
+],
+    "acknowledgements":"In addition to the support provided by STFC for GridPP, this specific work was supported by the European Research Council in the form of a Starting Grant with number 240672.",
+    "figures":
+[
+{"label":"lsstartistimpr","filename":"lsst-landscape.jpg","caption":"An artist's impression of the Large Synoptic Survey Telescope (LSST). LSST is under construction at the Cerro Pach&oacute;n ridge   in north-central Chil&eacute;, and is due to start scientific operations in 2023. Image credit: Mason Productions Inc./LSST Corporation; please contact them regarding licensing/re-use of this image.","short_caption":"An artist's impression of the LSST.","order":1},
+{"label":"lsstwhisker","filename":"thamana_cosmic-shear-sim.jpeg","caption":"A ``whisker plot'' showing the magnitude and direction of the cosmic shear (white tick-marks) caused by the mass distribution (coloured background) from a N-body astrophysical simulation. The degree of cosmic shear inferred from the analysis of LSST survey data can be used to estimate the effect of dark matter and dark energy in our Universe. Image credit: T. Hamana/arXiv; please contact them regarding licensing/re-use of this image.","short_caption":"An example of a whisker plot used in cosmic shear analyses.","order":2}
+],
+    "references":
+[
+{"Zuntz2013":"http://dx.doi.org/10.1093/mnras/stt1125"},
+{"Kilbinger2015":"http://dx.doi.org/10.1088/0034-4885/78/8/086901"}
+],
+    "links":
+[
+{"Large Synoptic Survey Telescope":"http://www.lsst.org/"},
+{"researchers at the University of Manchester":"http://www.jb.man.ac.uk/research/"},
+{"fundamental questions we have about our Universe":"http://www.lsst.org/about"},
+{"cosmic shear":"http://dx.doi.org/10.1088/0034-4885/78/8/086901"},
+{"Dark Universe":"http://www.stfc.ac.uk/research/astronomy-and-space-science/dark-matter/dark-matterenergy/"},
+{"due to start scientific operations in 2023":"http://www.lsst.org/about/timeline"},
+{"Mason Productions Inc./LSST Corporation":"http://www.lsst.org/gallery/image-gallery"},
+{"Zuntz 2013":"http://dx.doi.org/10.1093/mnras/stt1125"},
+{"T. Hamana/arXiv":"https://arxiv.org/abs/1001.1758"},
+{"resources and infrastructure offered by GridPP":"http://www.gridpp.ac.uk/services"},
+{"Large Hadron Collider":"http://www.stfc.ac.uk/research/particle-physics-and-particle-astrophysics/large-hadron-collider/"},
+{"Worldwide LHC Computing Grid":"http://wlcg.web.cern.ch/"},
+{"this video":"https://youtu.be/259asTAjts0"},
+{"Joe Zuntz":"http://www.jb.man.ac.uk/~zuntz/"},
+{"University of Manchester":"http://www.jb.man.ac.uk/research/"},
+{"Dark Energy Survey":"https://www.darkenergysurvey.org/"},
+{"LSST Virtual Organisation":"https://voms.fnal.gov:8443/voms/lsst"},
+{"GridPP DIRAC":"https://dirac.gridpp.ac.uk"}
+]
+  },
+  {
+    "full_name":"Galactic Dynamics (UCLan)",
+    "label":"galdyn",
+    "sector":"Astrophysics",
+    "overview":"The Galactic Dynamics group at the University of Central Lancashire (UCLan) have been using GridPP resources to simulate orbits of galactic matter in order to better understand how galaxies form.",
+    "the_problem":"Traditionally, galactic simulations require super computers (HPC) to run. This is because the effects of forces such as gravity need to be applied to the entire system being modelled; all objects being modelled will exert a force on all of the other objects present in the simulation. The GalDyn group's research looks at the orbits of particles within galaxies, such as stars and dark matter, and how these are affected by changing a wide variety of orbital parameters. This makes the problem highly parallelisable and ideal for running on the Grid.",
+    "the_solution":"Realising the Grid offered the tools required to run tens of thousands of simulation jobs, and manage the large data sets these jobs would produce, the GalDyn group approached GridPP via the Lancaster Tier-2 site. Following the instructions in the GridPP UserGuide, the GalDyn team were setup with grid certificates and access to the NorthGrid Incubator Virtual Organisation to give them access to GridPP computing resources via the Imperial DIRAC instance. Their custom software, written in C++ and stored in a BitBucket repository, was deployed using a CernVM-FS repository hosted on the GridPP RAL Stratum-0, making it instantly available to any UK Grid site. By using a GridPP CernVM, the GalDyn team were able to locally compile and test their software for Grid use.",
+    "what_they_said":{"quote":"We can run our code on the Grid and are looking to move into production with tens of thousands of jobs required for our final results. It's nice to know the facility is there and quick to get setup, instead of having to worry how long it will take to get a load run!","contact":"A. Clarke, GalDyn"},
+    "services":
+[
+{"Virtual Organisations":"GalDyn made use of the NorthGrid incubator VO during the workflow development phase."},
+{"CernVM":"For creating a User Interface to the Grid and software testing."},
+{"CVMFS":"For software deployment and management."},
+{"The GridPP DIRAC service":"For Grid job submissiong and management."},
+{"Storage":"The DIRAC File Catalog (DFC) was used for data storage and management."}
+],
+    "supporting_sites":
+[
+{"UKI-NORTHGRID-LANCS-HEP":"http://www.lancaster.ac.uk/"},
+{"UKI-NORTHGRID-LIV-HEP":"http://www.liv.ac.uk/"}
+],
+    "vos":
+[
+{"vo.northgrid.ac.uk":{"egi_ops":"http://operations-portal.egi.eu/vo/view/voname/vo.northgrid.ac.uk","voms_server":"https://voms.gridpp.ac.uk:8443/voms/vo.northgrid.ac.uk/"}}
+],
+    "figures":
+[
+{"label":"spiralgalaxy","filename":"Hubble2005-01-barred-spiral-galaxy-NGC1300_WEB.jpeg","caption":"Barred spiral galaxy NGC 1300. Credit: NASA, ESA, and The Hubble Heritage Team STScI/AURA) 2004; please contact them regarding licensing/re-use of this image.","short_caption":"Barred spiral galaxy NGC 1300.","order":1},
+{"label":"galdynsim","filename":"galdyn-warp_RAW.png","caption":"A Smooth Particle Hydrodynamics (SPH) simulation of the gas in a galactic disk as simulated by the GalDyn group. Credit: A. Clarke 2015; please contact them regarding licensing/re-use of this image.","short_caption":"Smooth Particle Hydrodynamics simulation of a galactic disk.","order":2}
+],
+    "links":
+[
+{"Galactic Dynamics group":"http://http://www.star.uclan.ac.uk/~vpd/"},
+{"University of Central Lancashire":"http://www.uclan.ac.uk/"}
+]
+  },
+  {
+    "full_name":"LUCID",
+    "label":"lucid",
+    "sector":"Space",
+    "overview":"The team behind the satellite-based LUCID experiment have run GEANT4 simulations of their detectors on the Grid in order to better understand the data collected since its 2014 launch aboard Surrey Satellite Technology Limited's TechDemoSat-1.",
+    "the_problem":"The Langton Ultimate Cosmic ray Intensity Detector (LUCID) experiment uses five Timepix detectors to measure properties of the space radiation environment in Low Earth Orbit (LEO). These detectors, developed by the Medipix Collaboration at CERN, can measure the flux, direction and energy of incident ionising radiation using silicon pixel technology developed for the LHC. LUCID was designed by students from the Simon Langton School for Boys (Canterbury, UK) and built by Surrey Satellite Technology Limited (SSTL), and is one of the research projects associated with the CERN@school programme.\n\nAs with most modern particle physics experiments, a GEANT4 simulation of LUCID was developed in order to understand the performance of the experiment in the wide range of radiation environments to which it would be exposed. These included the outer electron belts of the Polar Regions and the South Atlantic Anomaly (SAA). The number of simulations required to produce reliable statistics was far beyond what the school computing infrastructure could provide and so it was decided to use the Grid.",
+    "the_solution":"The GEANT4 simulation of LUCID, built with the Medipix Collaboration's Allpix software suite, was compiled on a Grid-compatible SLC6 machine and deployed using the CERN@school CernVM-FS software repository hosted on RAL's Stratum-0. After determining the number of simulations required, based on the relevant points on LUCID's orbit and the expected particle fluxes from the AP8 (AE8) proton (electron) models, GEANT4 parameter input files were generated and used to submit thousands of jobs to the Grid using the Imperial DIRAC instance. Around 500 orbital points were simulated per run, modelling the interactions of around 5 million source particles per orbital point. Data was stored and managed using the DIRAC File Catalog, with prompt retrieval and analysis made possible using DIRAC's metadata functionality. The results were presented at the International Workshop on Radiation Imaging Detectors 2014~\\cite{Whyntie2015a}.",
+    "services":
+[
+{"Virtual Organisations":"LUCID is part of the CERN@school research programme, and used the cernatschool.org VO accordingly."},
+{"CernVM":"For creating a User Interface to the Grid and for software testing."},
+{"CVMFS":"For software deployment and management."},
+{"The GridPP DIRAC service":"For Grid job submission and management."},
+{"Storage":"The DIRAC File Catalog (DFC) was used for data storage and management."}
+],
+    "supporting_sites":
+[
+{"UKI-LT2-QMUL":"https://www.gridpp.ac.uk/infrastructure/the-uk-tier-2-sites/qmul"},
+{"UKI-NORTHGRID-LIV-HEP":"http://www.liv.ac.uk/"},
+{"UKI-SCOTGRID-GLASGOW.uk":"http://www.glasgow.ac.uk"}
+],
+    "vos":
+[
+{"cernatschool.org":{"egi_ops":"http://operations-portal.egi.eu/vo/view/voname/cernatschool.org","voms_server":"https://voms.gridpp.ac.uk:8443/voms/cernatschool.org/"}}
+],
+    "acknowledgements":"In addition to the support provided by STFC for GridPP, this work was supported by the UK Science and Technology Facilities Council (STFC) grant ST/N00101X/1 and a Special Award from the Royal Commission of the Exhibition of 1851 as part of work with the CERN@school research programme.",
+    "figures":
+[
+{"label":"techdemosatselfie","filename":"techdemosat_selfie_WEB.png","caption":"The TechDemoSat-1 selfie from July 2014. Image credit: Surrey Satellite Technology Ltd.; please contact them regarding licensing/re-use of this image.","short_caption":"The TechDemoSat-1 selfie from July 2014.","order":1},
+{"label":"lucidoccplot","filename":"lucid-occupancy_WEB.jpeg","caption":"Detector occupancy plot from the LUCID full simulation. Image reproduced from~\\cite{Whyntie2015a}; please contact the publisher for further information regarding the licensing/re-use of this image.","short_caption":"Detector occupancy plot from the LUCID full simulation.","order":2}
+],
+    "references":
+[
+{"Whyntie2015a":"http://dx.doi.org/10.1088/1748-0221/10/03/C03043"}
+],
+    "links":
+[
+{"GEANT4 simulations":"http://geant4.web.cern.ch/"},
+{"Surrey Satellite Technology Limited":"http://www.sstl.co.uk/"},
+{"TechDemoSat-1":"http://www.sstl.co.uk/Missions/TechDemoSat-1-Launched-2014"},
+{"Medipix Collaboration at CERN":"http://medipix.web.cern.ch"},
+{"CERN@school programme":"http://researchinschools.org/CERN"}
+]
+  },
+  {
+    "full_name":"HTC for Evolutionary Biology",
+    "label":"dolphins",
+    "sector":"Biology",
+    "overview":"Whales and dolphins make up the cetaceans, a special group of mammals adapted to life underwater.  Their transition from dry land to an aquatic environment is one of the greatest examples of evolutionary adaptation.  Georgia Tsagkogeorga and her colleagues at Queen Mary University of London were interested in how cetaceans evolved in comparison with their closest relatives. In particular, they wanted to know if the molecular adaptations related to aquatic lifestyle appeared before or after whales and dolphins split from the hippos.  Using GridPP resources, the team were able to test different evolutionary hypotheses on a vast scale to gain an insight.",
+    "the_problem":"To test whether selection pressures acted on a given gene, a series of probabilistic analyses using codon models of evolution need to be performed.  This involves fitting two models onto the data: one representing the null neutral evolution hypothesis and a second model assuming selective pressures acting on the gene. By comparing the likelihoods of the null vs. alternative models, the selective regime of the gene in the lineage of interest can be inferred.  However, this needed to be done for 11,000 genes across five lineages of aquatic and semi-aquatic mammals.",
+    "the_solution":"Fortunately the required analyses were highly parallelisable, making them ideal for running on the Grid.  With support from the Queen Mary University of London Tier-2 cluster team, Tsagkogeorga and her colleagues were able to run the required 110,000 computations quickly and efficiently.  The conclusions, published in Royal Society Open Science, show that the most significant molecular adaptations to aquatic life, for example the evolution of underwater sensory perception or their ability to dive, appeared in cetaceans after the split with the hippos, 55 million years ago.",
+    "what_they_said":{"quote":"These analyses would have taken months to complete without access to parallel computing.  Our study benefited greatly from the 3,000+ CPU cores of QMUL GridPP cluster, by speeding up the analyses to only a few weeks or even days.","contact":"Dr Georgia Tsagkogeorga, School of Biological and Chemical Science, QMUL"},
+    "services":
+[
+{"Compute":"The studies were run on the High Throughput Computing (HTC) GridPP cluster at QMUL."},
+{"Storage":"Results were stored on the QMUL cluster's Lustre-based storage system."}
+],
+    "supporting_sites":
+[
+{"UKI-LT2-QMUL":"https://www.gridpp.ac.uk/infrastructure/the-uk-tier-2-sites/qmul"}
+],
+    "acknowledgements":"In addition to the support provided by STFC for GridPP, this work was funded by the European Research Council (ERC 1076 Starting grant no. 310482).", 
+    "figures":
+[
+{"label":"humpbackwhale","filename":"Humpback_Whale_underwater_shot.jpeg","caption":"A humpback whale. This image is in the Public Domain.","short_caption":"A humpback whale.","order":1},
+{"label":"evoltree","filename":"dolphins-fig.jpg","caption":"Evolutionary relationships among laurasiatherian mammals as used in molecular evolution analyses performed with GridPP resources.  The four clades tested for divergent selection are shown in colour and numbered in uppercase: (I) Whippomorpha (Hippopotamidae + Cetacea); (II) Cetacea; (III) Mysticeti and (IV) Odontoceti. Branches tested for positive selection are numbered in lowercase: (i) Whippomorpha (Hippopotamidae + Cetacea); (ii) Cetacea; (iii) Mysticeti; (iv) Odontoceti and (v) hippo. Reproduced from (Tsagkogeorga, 2015); please refer to the paper regarding licensing/re-use of this image.","short_caption":"Evolutionary relationships among laurasiatherian mammals","order":2}
+],
+    "references":
+[
+{"Tsagkogeorga2015":"http://dx.doi.org/10.1098/rsos.150156"}
+],
+    "links":
+[
+{"Georgia Tsagkogeorga":"https://georgiatsagkogeorga.com/"},
+{"colleagues at the Queen Mary University of London":"https://evolve.sbcs.qmul.ac.uk/rossiter/"},
+{"published in Royal Society Open Science":"http://dx.doi.org/10.1098/rsos.150156"},
+{"A humpback whale. This image is in the Public Domain":"https://commons.wikimedia.org/wiki/File:Humpback_Whale_underwater_shot.jpg"}
+]
+  },
+  {
+    "full_name":"PRaVDA - HTC for hadron therapy",
+    "label":"pravda",
+    "sector":"Medicine",
+    "overview":"Researchers at the University of Birmingham, part of the Wellcome Trust-funded Proton Radiotherapy Verification and Dosimetry Applications (PRaVDA) Consortium, are helping to design, build, and commission a device that measures the position and energy of protons used to attack tumours that other forms of cancer treatment can struggle to treat. Such measurements can help ensure that the tumour is being treated optimally, reducing the risk for patients. To optimise their designs, computer simulations of the experimental setup can be run to investigate the effect of changing various parameters without the need for extensive laboratory testing.",
+    "the_problem":"The PRaVDA team's experimental setup is modelled using the GEANT4-based Super Simulation (SuSi) software suite. Thousands of parameter settings, covering changes to the detectors used (silicon strips and pixels) and their settings, the types and sources of particles, and the group's novel event reconstruction algorithms, needed to be run with simulations featuring millions of particle interactions. Such a workload proved too much for the university's local computing cluster, and other UK-based compute resources were not optimised for such a massively-parallelisable task on the scale required by PRaVDA. ",
+    "the_solution":"GridPP, who regularly handle billions of GEANT4-based simulations for the Large Hadron Collider (LHC) experiments and other particle physics-based projects, were suggested to the PRaVDA team as potential collaborators. After a successful initial meeting to establish the group's requirements, the PRaVDA SuSi workflow was ported to run on GridPP resources via the GridPP DIRAC service. Simulation jobs were configured and managed using the Ganga interface, and the team's software was distributed to the grid using the CernVM File System (CVMFS). As a result, the team has been able to move to simulations using five times more particles-per-simulation while reducing total run times from weeks to hours.",
+    "what_they_said":{"quote":"GridPP has been invaluable to us as a project. There were experts on hand to get me up and running, which was great as time on the project is short. It's easy to quickly run test jobs, and running on 64 cores at a time has vastly reduced wait times. CVMFS has greatly simplified our software deployment too. A huge thank you to those who have supported us!","contact":"Dr Tony Price, Uni. Birmingham/PRaVDA"},
+    "services":
+[
+{"Virtual Organisations":"Jobs were run using the GridPP incubator VO."},
+{"Ganga":"Ganga was used for grid job submission and management."},
+{"CVMFS":"CVMFS was used for software deployment and management."},
+{"The GridPP DIRAC service":"Jobs were managed using the GridPP DIRAC service."}
+],
+    "supporting_sites":
+[
+{"UKI-SOUTHGRID-BHAM-HEP.uk":"http://www.birmingham.ac.uk/"}
+],
+    "vos":
+[
+{"gridpp":{"egi_ops":"http://operations-portal.egi.eu/vo/view/voname/gridpp","voms_server":"https://voms.gridpp.ac.uk:8443/voms/gridpp/"}}
+],
+    "acknowledgements":"In addition to the support provided by STFC for GridPP, This work was supported by the Wellcome Trust Translation Award Scheme, grant number 098285.", 
+    "figures":
+[
+{"label":"pravdaexpsetup","filename":"tprice_exp-setup_HD.jpeg","caption":"The PRaVDA experimental setup at the iThemba LABS beamline, South Africa. Image credit: T. Price/PRaVDA Consortium 2016; please contact them regarding licensing and re-use of this image.","short_caption":"The PRaVDA experimental setup.","order":1},
+{"label":"pravdasimvis","filename":"PRaVDA_SuSi-schematic_WEB.jpeg","caption":"A visualisation of the PRaVDA Super Simulation model. Inset: some example proton beam interactions with GEANT4. Image credit: T. Price/PRaVDA 2015; please contact them regarding licensing and re-use of this image.","short_caption":"A visualisation of the PRaVDA Super Simulation model.","order":2}
+],
+    "references":
+[
+{"Price2015":"https://dx.doi.org/10.1088/1748-0221/10/05/P05013"},
+{"Poludniowski2015":"https://dx.doi.org/10.1259/bjr.20150134"}
+],
+    "links":
+[
+{"University of Birmingham":"http://www.birmingham.ac.uk"},
+{"Wellcome Trust-funded":"https://wellcome.ac.uk/"},
+{"Proton Radiotherapy Verification and Dosimetry Applications (PRaVDA) Consortium":"http://www.pravda.uk.com/"}
+]
+  },
+  {
+    "full_name":"Monopole hunting at the LHC",
+    "label":"moedal",
+    "sector":"Physics",
+    "overview":"The MoEDAL experiment (Monopole and Exotics Detector at the LHC) is the seventh major experiment at CERN's Large Hadron Collider.  It is designed to probe the LHC's particle collisions for signs of Paul Dirac's hypothesised magnetic monopole, as well as other highly ionising signs of new physics that the other LHC experiments cannot easily look for.  In order to quickly obtain results from the LHC's 13 TeV run, the MoEDAL Collaboration needed to setup and run millions of GEANT4-based simulations.  Thanks to the infrastructure provided by GridPP, this was possible within a matter of days.",
+    "the_problem":"MoEDAL is a relatively new - and relatively small - experiment at the LHC.  Housed at Interaction Point 8, it shares the experimental cavern with the LHCb experiment.  Despite its size, it has a comprehensive physics programme and needs to perform full particle transport simulations of the detector subsystems and their surroundings in order to understand how monopoles (or other new physics that might show up through highly-ionising signatures) will interact with MoEDAL's experimental apparatus.  Different parameters - such as the monopole mass or magnetic charge - each require hundreds of thousands of events.  Local batch systems used by collaboration members were struggling to cope with the scale of computing required for the latest 13 TeV dataset.",
+    "the_solution":"Fortunately, GridPP were able to help.  While technically an LHC experiment, the size of the MoEDAL Collaboration meant that the infrastructure provided by the New User Engagement Programme was ideal for quickly getting MoEDAL's software group up and running on the Grid.  Using the vo.moedal.org Virtual Organisation and a CVMFS software repository at CERN, the MoEDAL and LHCb software could be run on the Grid using GridPP DIRAC.  Ganga provided a user-friendly interface for development and testing of the simulation workflow on a local batch system before switching to the GridPP DIRAC back-end.  The scalability of the system, with Ganga able to manage hundreds of jobs at a time, meant that a wide range of parameters could be explored in parallel.  In all 36 million events were simulated in a few days using GridPP resources, providing the collaboration with the results they needed for a demanding publication schedule.",
+    "what_they_said":{"quote":"Having worked with the Grid before, I knew that GridPP's resources could deliver what we needed in the timescale we had to work with.  The fantastic team behind GridPP DIRAC were able to configure our VO at supporting sites with ease and get us up and running with large-scale simulations fast.  Ganga's ability to switch between local and Grid running meant that the development and testing phases were made simpler too; by changing one configuration parameter we could switch from running a few local jobs to hundreds on the Grid with ease.","contact":"Dr Tom Whyntie, Software Coordinator, MoEDAL/QMUL"},
+    "services":
+[
+{"Virtual Organisations":"The MoEDAL Virtual Organisation to represent MoEDAL's use of computing resources on the Grid."},
+{"Ganga":"Ganga was used for local and batch submission during development of the workflow, and then for job submission and management."},
+{"CernVM":"These provided a Grid-friendly system MoEDAL members to use when not using the CERN lxplus batch system, as CernVMs can be used for running Ganga and DIRAC via CVMFS."},
+{"CVMFS":"The MoEDAL CVMFS repository was used for deployment and management of the MoEDAL software and access to the LHCb, Ganga and DIRAC software."},
+{"The GridPP DIRAC service":"GridPP DIRAC was used for Grid job submission and management, via the Ganga interface."},
+{"Storage":"The DIRAC File Catalog (DFC) was used for storage and management of the LHE simulation files (used as input to the simulation jobs) and output ROOT files containing the simulation results."}
+],
+    "supporting_sites":
+[
+{"UKI-LT2-QMUL":"https://www.gridpp.ac.uk/infrastructure/the-uk-tier-2-sites/qmul"},
+{"UKI-NORTHGRID-LIV-HEP":"http://www.liv.ac.uk/"}
+],
+    "vos":
+[
+{"vo.moedal.org":{"egi_ops":"http://operations-portal.egi.eu/vo/view/voname/vo.moedal.org","voms_server":"https://voms2.cern.ch:8443/voms/vo.moedal.org/"}}
+],
+    "acknowledgements":"This work was supported by the UK Science and Technology Facilities Council (STFC) via GridPP5 and grant number ST/N00101X/1.", 
+    "figures":
+[
+{"label":"moedalvelo","filename":"MoEDAL-IMG-001.jpg","caption":"The MoEDAL experiment in the VeLo cavern at IP8. Credit: The MoEDAL Collaboration 2016; please contact them regarding licensing and re-use of this image.","short_caption":"The MoEDAL experiment in the VeLo cavern at IP8.","order":1}
+],
+    "references":
+[
+{"MoEDAL2009":"https://cds.cern.ch/record/1181486"},
+{"MoEDAL2016a":"http://dx.doi.org/10.1007/JHEP08(2016)067"}
+],
+    "links":
+[
+{"Monopole and Exotics Detector at the LHC":"http://moedal.web.cern.ch"},
+{"hypothesised magnetic monopole":"http://dx.doi.org/10.1098/rspa.1931.0130"},
+{"GEANT4-based simulations":"http://geant4.cern.ch/"},
+{"LHCb experiment":"http://lhcb-public.web.cern.ch/"},
+{"comprehensive physics programme":"http://dx.doi.org/10.1142/S0217751X14300506"}
+]
+  }
+]

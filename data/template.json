@@ -1,0 +1,49 @@
+  {
+    "full_name":"",
+    "label":"",
+    "sector":"",
+    "overview":"",
+    "the_problem":"",
+    "the_solution":"",
+    "what_they_said":{"quote":"","contact":""},
+    "services":
+[
+{"Virtual Organisations":""},
+{"Ganga":""},
+{"CernVM":""},
+{"CVMFS":""},
+{"The GridPP DIRAC service":""},
+{"Storage":""}
+],
+    "supporting_sites":
+[
+{"UKI-LT2-BRUNEL":"http://www.brunel.ac.uk/"},
+{"UKI-LT2-IC-HEP":"http://www3.imperial.ac.uk/"},
+{"UKI-LT2-QMUL":"https://www.gridpp.ac.uk/infrastructure/the-uk-tier-2-sites/qmul"},
+{"UKI-NORTHGRID-LANCS-HEP":"http://www.lancaster.ac.uk/"},
+{"UKI-NORTHGRID-LIV-HEP":"http://www.liv.ac.uk/"},
+{"UKI-NORTHGRID-MAN-HEP":"http://www.manchester.ac.uk/"},
+{"UKI-SCOTGRID-ECDF":"http://www.ed.ac.uk/"},
+{"UKI-SOUTHGRID-BHAM-HEP.uk":"http://www.birmingham.ac.uk/"},
+{"UKI-SOUTHGRID-OX-HEP":"http://www.ox.ac.uk/"},
+{"UKI-SOUTHGRID-RALPP":"http://www.stfc.ac.uk/about-us/where-we-work/rutherford-appleton-laboratory/"}
+],
+    "vos":
+[
+{"[NAME]":{"egi_ops":"http://operations-portal.egi.eu/vo/view/voname/[NAME]","voms_server":""}}
+],
+    "acknowledgements":"In addition to the support provided by STFC for GridPP...", 
+    "figures":
+[
+{"label":"","filename":"","caption":"","short_caption":"","order":1}
+],
+    "references":
+[
+{"":"http://dx.doi.org/"}
+],
+    "links":
+[
+{"":"http://"}
+]
+  }
+

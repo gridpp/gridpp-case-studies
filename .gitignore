@@ -1,0 +1,21 @@
+# LaTeX
+*.pdf
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+
+# Old stuff
+old/
+
+# Log files
+log*.log
+
+# Code-generated content
+auto*.tex
+
+# Mac
+.DS_Store

@@ -1,0 +1,258 @@
+\documentclass[12pt,a4paper]{iopart}
+
+% Document information
+\newcommand{\DRN}{GridPP-ENG-001-CaseStudies}
+\newcommand{\thisversion}{1.0}
+
+% Author information
+\input{common/authors/twhyntie.tex}
+
+% Packages and settings for GridPP document formatting
+\input{common/tools/GridPP-packages.tex}
+
+% CERN@school macros and definitions
+\input{common/tools/defs.tex}
+
+%\input{common/tools/latexlinks.tex}
+
+\renewcommand{\listfigurename}{}
+
+\begin{document}
+
+%
+% Title
+%
+% The GridPP logo
+\input{common/tools/logoheader.tex}
+
+\title{%
+The GridPP New User Engagement Programme:\\
+Selected Case Studies
+}
+
+% 
+% Author information
+\author{\theauthorinit$^{1}$}
+%
+\address{$^1$\theauthoraddressA}
+\ead{\mailto{\theauthoremail}}
+
+%-----------------------------------------------------------------------------
+% Abstract
+\begin{abstract}
+A number of selected case studies from the GridPP Collaboration's
+New User Engagement Programme are presented,
+featuring new user communities from fields including
+medical physics, computational biology, space and astrophysics.
+The services used and developed by GridPP
+to achieve this engagement are also briefly
+described.
+\end{abstract}
+%-----------------------------------------------------------------------------
+%
+
+% Add a table of contents.
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+% Add the license information (CC-BY-4).
+\input{common/tools/licenseCCBY4}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{sec:intro}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The GridPP Collaboration~\cite{gridpp2006,gridpp2009}
+is a community of particle physicists and computer
+scientists based in the United Kingdom and at CERN.
+Drawing on expertise from nineteen UK institutions,
+its vision is to create, manage and oversee the evolution of the computing
+infrastructure needed to maintain the UK's position as a world leader in
+particle physics.
+It does this by using and actively contributing to the development of
+open source software, applications and middleware needed to power
+large-scale distributed computing for particle physics and beyond.
+
+GridPP was originally proposed to provide the UK's contribution to
+computing required for the Large Hadron Collider~\cite{LHC2008} (LHC) at CERN.
+%
+However, GridPP's continually developing infrastructure has since
+evolved to serve a wide range of user communities in many fields of
+scientific and engineering endeavour.
+Indeed, a requirement of GridPP's funding agreement is to make up
+to 10\% of its resources available to non-LHC communities,
+which as of 2012 was roughly 30,000 logical CPUs
+(equating to 292,000 HEPSPEC06\footnote{%
+See \href{https://w3.hepix.org/benchmarks/doku.php}{https://w3.hepix.org/benchmarks/doku.php}})
+and 29 PB of storage.
+
+%
+With that in mind,
+since 2013 the GridPP New User Engagement Programme has
+encouraged the development and use of a number of tools and services
+to enhance the potential for engagement with the Grid.
+These include:
+
+\begin{itemize}
+%
+\item \term{The GridPP CernVM}: The GridPP CernVM provides an out-of-the-box
+Virtual Machine (VM) instance that is ready to be used as a gateway to the Grid.
+Based on the Scientific Linux 6 operating system,
+and using technology developed by CERN's
+\href{http://cernvm.cern.ch}{CernVM group}~\cite{CernVM2015},
+the GridPP CernVM is a contextualised VM image that has instant access to
+the software and tools required to access GridPP's distributed computing
+resources.
+%
+\item \term{The CernVM File System} (CernVM-FS or CVMFS): allows software to
+be deployed, managed, and used wherever it is needed on the
+Grid~\cite{CVMFS2015}.
+%
+\item \term{Ganga}: The Ganga software suite\footnote{%
+See \href{http://ganga.web.cern.ch}{http://ganga.web.cern.ch}}
+provides a Python-based interface to the Grid.
+It was developed to provide a simpler interface to enable physicists to submit
+their jobs across the Grid and to handle the complete life-cycle of each job.
+Ganga can be configured to submit and manage jobs on a local machine,
+a local batch system, or distributed GridPP resources via GridPP DIRAC.
+%
+\item \term{GridPP DIRAC}: The GridPP DIRAC service is a
+DIRAC~\cite{DIRAC2010}
+instance hosted at Imperial College London that has been developed to cater
+for the multiple VOs that represent the non-LHC users of
+GridPP resources~\cite{GRIDPPDIRAC2015a,GRIDPPDIRAC2015b}.
+%
+In combination with the Ganga software suite,
+users have at their disposal a
+powerful set of tools for managing complex distributed computing workflows.
+\end{itemize}
+
+A number of selected case studies, demonstrating how new user
+communities have been engaged using this toolkit,
+are
+listed in Table~\ref{tab:casestudies} and
+presented in the following sections of this document.
+
+
+\begin{landscape}
+{\color{white} There must be a better way of doing this.}
+\\[3cm]
+\input{table}
+\end{landscape}
+
+\clearpage
+
+\input{casestudies/list}
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\section*{References}
+\bibliographystyle{unsrt.bst}
+\bibliography{GridPP}
+%
+%------------------------------------------------------------------------------
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgements}
+\label{sec:ack}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The author wishes to thank the following people and organisations for
+their support with the work described here:
+%
+the European Grid Initiative (EGI)
+and
+the Worldwide LHC Computing Grid (wLCG);
+the CernVM group (CERN) for developing the CernVM
+and CernVM-FS services that have revolutionised the way
+users work with software on the Grid;
+%
+Catalin Condurache for supporting GridPP's CernVM-FS
+capabilities at the Rutherford Appleton Laboratory (RAL);
+%
+Daniela Bauer, Simon Fayer (Imperial College London),
+and Janusz Martyniak (now at RAL)
+for their tremendous work developing and supporting GridPP DIRAC;
+%
+the Ganga development team\footnote{%
+See \href{https://github.com/ganga-devs/}{https://github.com/ganga-devs/}}
+for their work on and support for the Ganga user interface;
+Sam Skipsey and Jens Jensen from the
+GridPP Storage group for VO storage-related support;
+%
+Christopher J. Walker (QMUL), Alessandra Forti (Uni. Manchester)
+and Andrew Lahiff (RAL) for their support
+with setting up various new user communities at various points in the programme;
+Andrew McNab (Uni. Manchester) with technical support with
+the GridPP website and online user guide\footnote{%
+See \href{https://www.gridpp.ac.uk/userguide/}{https://www.gridpp.ac.uk/userguide/}};
+%
+Dan Taylor, Alex Owen, Cozmin Timis, and Terry Froy (QMUL) for
+support with development work on the Queen Mary University of London cluster;
+%
+Jeremy Coles (Uni. Cambridge) for leading GridPP Operations and
+coordinating new user community activities;
+%
+Peter Gronbech (Uni. Oxford) for support with Project Management;
+%
+Suzanne Scott and Louisa Campbell (Uni. Glasgow) for administrative
+support for Collaboration activities (particularly
+the GridPP Collaboration meetings where the programme was
+discussed and developed, as well as welcoming contributions from
+newly engaged users);
+%
+David Britton (Uni. Glasgow) for leading the GridPP Collaboration
+and supporting the vision of the New User Engagement Programme
+as it developed, and, finally;
+%
+Steve Lloyd (QMUL) for chairing the GridPP Collaboration Board,
+providing numerous testing and support mechanisms for Grid
+activities, and many, many, many fruitful discussions.
+
+This work was supported by the UK Science and Technology Facilities Council
+(STFC) via the GridPP Collaboration~\cite{gridpp2006,gridpp2009}
+and grant ST/N00101X/1 as part of work with the CERN@school research
+programme.
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{List of Figures}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Note that the images listed here are not subject to the
+Creative Commons 4.0 lilcense under which this document (``the work'') is
+issued. For information about licensing and re-use,
+please contact the image owners as described in the figure captions.
+\listoffigures
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Version History}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%______________________________________________________________________________
+\begin{table}[h]
+\caption{\label{tab:version}Version history.}
+\lineup
+\begin{indented}
+\item[]\begin{tabular}{@{}cllc}
+\br
+\centre{1}{$\quad$Version    $\quad$} & 
+\centre{1}{$\quad$Description$\quad$} &
+\centre{1}{$\quad$DOI        $\quad$} &
+\centre{1}{$\quad$Author     $\quad$} \\
+\mr
+1.0 & Initial version. & \href{http://dx.doi.org/10.5281/zenodo.220995}{10.5281/zenodo.220995} & TW \\
+\br
+\end{tabular}
+\end{indented}
+\end{table}
+%______________________________________________________________________________
+
+\end{document}
